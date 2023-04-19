@@ -32,9 +32,18 @@ if (isAdult == 'yes') {
     console.log('You have reached the age of majority');
 } else if (isAdult == 'no') {
     console.log('You are still too young');
-} 
+}
 //4
-
+let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+let mostRepeatedNumber = arr.filter((n, i) => arr.indexOf(n) === i).sort((a, b) => arr.filter(n => n === b).length -
+    arr.filter(n => n === a).length)[0];
+console.log(mostRepeatedNumber);
+for (let j = 0; j < arr.length; j++) {
+    if (arr[j] === mostRepeatedNumber) {
+        arr.splice(arr.indexOf(mostRepeatedNumber), 1);
+    }
+}
+console.log(arr);
 //5
 let firstSide = +prompt('Enter the length of the first side of the triangle');
 let secondSide = +prompt('Enter the length of the second side of the triangle');
@@ -51,3 +60,54 @@ if (!/^\d+$/.test(firstSide) || !/^\d+$/.test(secondSide) || !/^\d+$/.test(third
     alert('Incorrect data');
 }
 //6
+let date = new Date();
+console.log(date);
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+let time = `${hours}:${minutes}:${seconds}`;
+console.log(time);
+if (23 <= hours || hours === 0 || hours < 5) {
+    console.log('Доброї ночі');
+} else if (5 <= hours && hours < 11) {
+    console.log('Доброго ранку');
+} else if (11 <= hours && hours < 17) {
+    console.log('Доброго дня');
+} else if (17 <= hours && hours < 23) {
+    console.log('Доброго вечора');
+}
+
+switch (hours) {
+    case 23:
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        console.log('Доброї ночі');
+        break;
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+        console.log('Доброго ранку');
+        break;
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+    case 16:
+        console.log('Доброго дня');
+        break;
+    case 17:
+    case 18:
+    case 19:
+    case 20:
+    case 21:
+    case 22:
+        console.log('Доброго вечора');
+        break;
+}
